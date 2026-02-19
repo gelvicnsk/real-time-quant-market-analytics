@@ -1,0 +1,15 @@
+global:
+  scrape_interval: 5s
+
+scrape_configs:
+  - job_name: "kafka"
+    static_configs:
+      - targets: ["kafka:9092"]
+
+  - job_name: "flink"
+    static_configs:
+      - targets: ["flink:8081"]
+
+  - job_name: "postgres"
+    static_configs:
+      - targets: ["postgres:9187"]

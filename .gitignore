@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+.env
+*.pyc
+clickhouse_data/
+postgres_data/
+grafana_data/

@@ -1,0 +1,24 @@
+{
+  "id": null,
+  "title": "Market - Close Price (ClickHouse)",
+  "tags": ["market", "clickhouse"],
+  "timezone": "browser",
+  "schemaVersion": 39,
+  "version": 1,
+  "refresh": "10s",
+  "panels": [
+    {
+      "type": "timeseries",
+      "title": "Close Price - TSLA",
+      "gridPos": { "x": 0, "y": 0, "w": 24, "h": 10 },
+      "targets": [
+        {
+          "refId": "A",
+          "format": "time_series",
+          "queryType": "sql",
+          "rawSql": "SELECT ts as time, close as value FROM market.market_ticks WHERE symbol='TSLA' ORDER BY ts"
+        }
+      ]
+    }
+  ]
+}

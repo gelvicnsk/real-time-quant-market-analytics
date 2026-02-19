@@ -1,0 +1,53 @@
+# 📊 Real-Time Quant Market Analytics
+
+A real-time quantitative market analytics pipeline built with Kafka, ClickHouse and Grafana.
+
+This project simulates and processes streaming market data to detect regime changes, volatility clustering and volume anomalies.
+
+---
+
+## 🚀 Architecture
+
+Producer → Kafka → Python Stream Processor → ClickHouse → Grafana
+
+### Stack
+
+- Kafka (real-time streaming)
+- Python (consumer, aggregation, indicators)
+- ClickHouse (high-performance time-series storage)
+- Grafana (real-time dashboarding)
+- Docker / Docker Compose (orchestration)
+
+---
+
+## 📈 Features
+
+- 1-minute candle aggregation
+- Log return computation
+- Moving averages (SMA)
+- Rolling volatility estimation
+- Volume anomaly detection
+- Multi-asset comparison (BTC, AAPL, TSLA)
+
+---
+
+## 🧠 What It Demonstrates
+
+- Real-time data engineering
+- Streaming architecture design
+- Time-series database modeling
+- Quantitative signal computation
+- Dashboarding & observability
+
+---
+
+## 📊 Example Dashboard
+
+(Add screenshots here)
+
+---
+
+## 🐳 Run the project
+
+```bash
+docker compose up --build

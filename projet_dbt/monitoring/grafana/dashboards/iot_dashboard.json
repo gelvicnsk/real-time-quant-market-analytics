@@ -1,0 +1,46 @@
+{
+  "id": null,
+  "uid": "iot-dashboard",
+  "title": "IoT Streaming Dashboard",
+  "timezone": "browser",
+  "schemaVersion": 38,
+  "version": 1,
+  "panels": [
+    {
+      "type": "timeseries",
+      "title": "🌡 Température moyenne",
+      "datasource": "grafana-postgresql-datasource",
+      "targets": [
+        {
+          "format": "time_series",
+          "rawSql": "SELECT event_minute AS time, avg_temperature FROM analytics.agg_iot_metrics ORDER BY event_minute"
+        }
+      ],
+      "gridPos": { "x": 0, "y": 0, "w": 12, "h": 8 }
+    },
+    {
+      "type": "timeseries",
+      "title": "🔥 Température max",
+      "datasource": "grafana-postgresql-datasource",
+      "targets": [
+        {
+          "format": "time_series",
+          "rawSql": "SELECT event_minute AS time, max_temperature FROM analytics.agg_iot_metrics ORDER BY event_minute"
+        }
+      ],
+      "gridPos": { "x": 12, "y": 0, "w": 12, "h": 8 }
+    },
+    {
+      "type": "stat",
+      "title": "🚨 Événements critiques",
+      "datasource": "grafana-postgresql-datasource",
+      "targets": [
+        {
+          "format": "table",
+          "rawSql": "SELECT sum(critical_events) FROM analytics.agg_iot_metrics"
+        }
+      ],
+      "gridPos": { "x": 0, "y": 8, "w": 8, "h": 6 }
+    }
+  ]
+}

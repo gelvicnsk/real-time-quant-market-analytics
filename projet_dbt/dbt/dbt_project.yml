@@ -1,0 +1,16 @@
+name: "iot_dbt"
+version: "1.0.0"
+config-version: 2
+
+profile: "iot"
+
+model-paths: ["models"]
+target-path: "target"
+clean-targets: ["target", "dbt_packages"]
+
+models:
+  iot_dbt:
+    staging:
+      +materialized: view
+    analytics:
+      +materialized: table

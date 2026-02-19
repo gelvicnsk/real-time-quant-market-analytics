@@ -1,0 +1,15 @@
+version: 2
+
+sources:
+  - name: iot
+    database: iot
+    schema: public
+    tables:
+      - name: raw_iot
+        description: "Données IoT brutes issues de Kafka/Flink"
+        columns:
+          - name: sensor_id
+            tests: [not_null]
+          - name: temperature
+          - name: humidity
+          - name: event_time
